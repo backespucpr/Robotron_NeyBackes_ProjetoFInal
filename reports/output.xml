@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on linux)" generated="20220711 16:21:10.754" rpa="false" schemaversion="3">
+<suite id="s1" name="Estrutura Base" source="/home/neybackes/Documentos/Robotron_NeyBackes_ProjetoFInal/estrutura_base.robot">
+<test id="s1-t1" name="Cenario: Get Todos os usuários 200" line="15">
+<kw name="Criar Sessao">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>serverest</arg>
+<arg>https://serverest.dev/</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220711 16:21:10.825" level="INFO">Creating Session using : alias=serverest, url=https://serverest.dev/, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220711 16:21:10.824" endtime="20220711 16:21:10.825"/>
+</kw>
+<status status="PASS" starttime="20220711 16:21:10.824" endtime="20220711 16:21:10.825"/>
+</kw>
+<kw name="Get Endpoint /usuarios">
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>serverest</arg>
+<arg>/usuarios</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220711 16:21:11.325" level="INFO">GET Request : url=https://serverest.dev/usuarios 
+ path_url=/usuarios 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220711 16:21:11.326" level="INFO">GET Response : url=https://serverest.dev/usuarios 
+ status=200, reason=OK 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': '33411593-6686-46b7-8597-048f241aaaf8', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '4d7321d67853fa754139bcb6d9411ed0;o=1', 'Date': 'Mon, 11 Jul 2022 19:21:11 GMT', 'Server': 'Google Frontend', 'Content-Length': '9685'} 
+ body={
+    "quantidade": 43,
+    "usuarios": [
+        {
+            "nome": "Fulano da Silva",
+            "email": "fulano@qa.com",
+            "password": "teste",
+            "administrador": "true",
+            "_id": "0uxuPY0cbmQhpEz1"
+        },
+        {
+            "nome": "Janis Daugherty",
+            "email": "Verner_Jacobson@yahoo.com",
+            "password": "cgyk0nKQyjJ5HH2",
+            "administrador": "true",
+            "_id": "1BbDKZJXSRGwMpsz"
+        },
+        {
+            "nome": "Ernest Schultz DDS",
+            "email": "King23@yahoo.com",
+            "password": "8Uvj0ITBOXpgsPI",
+            "administrador": "true",
+            "_id": "1cB1hLQ4dYGd0cst"
+        },
+        {
+            "nome": "Lynn Stark",
+            "email": "Adelbert.Osinski63@yahoo.com",
+            "password": "zgBDNANkUDkpMjN",
+            "administrador": "true",
+            "_id": "42tTOk18eKsS0A3L"
+        },
+        {
+            "nome": "Curt.Saraiva",
+            "email": "Consuelo_Xavier@hotmail.com",
+            "password": "ByNM8io1oLQeDRz",
+            "administrador": "true",
+            "_id": "5rmtZ5D9emcOxyUD"
+        },
+        {
+            "nome": "Ilço65",
+            "email": "Gilcei_Macedo40@yahoo.com",
+            "password": "cqhuTBsw1awnlqM",
+            "administrador": "true",
+            "_id": "6d25bwgnujKmWfs3"
+        },
+        {
+            "nome": "Hudson_Souza",
+            "email": "Deivid28@yahoo.com",
+            "password": "T8J_DoJkrlBDOlC",
+            "administrador": "true",
+            "_id": "92kyRM5UO6XIeTb0"
+        },
+        {
+            "nome": "Erick Ullrich Sr.",
+            "email": "Electa_Kilback@yahoo.com",
+            "password": "XkHYX5RH1eRYaNt",
+            "administrador": "true",
+            "_id": "BFscaKvmgBsI9WIU"
+        },
+        {
+            "nome": "João sem pé de alface",
+            "email": "Madie22@gmail.com",
+            "password": "6rj6LnKxT2F78zF",
+            "administrador": "true",
+            "_id": "C9AjX4LIIMeYOfWS"
+        },
+        {
+            "nome": "Matt Hudson",
+            "email": "Abdiel.Spinka@gmail.com",
+            "password": "W8zgBLtllG1Fl15",
+            "administrador": "true",
+            "_id": "D3SA3wITjntuDeRx"
+        },
+        {
+            "nome": "João sem pé de Feijão 7123",
+            "email": "joao77@semfeijao.com",
+            "password": "feijao",
+            "administrador": "true",
+            "_id": "D8OiCuHYRMRlCBVK"
+        },
+        {
+            "nome": "João sem pé de Feijão2",
+            "email": "joao2@semfeijao.com",
+            "password": "feijao",
+            "administrador": "true",
+            "_id": "H0KoCNcL1P854xbL"
+        },
+        {
+            "nome": "Emmett Corwin",
+            "email": "Rahul73@hotmail.com",
+            "password": "EEY9BDVAQjMlxWs",
+            "administrador": "true",
+            "_id": "J87wlQyDeZG3LbXy"
+        },
+        {
+            "nome": "Antoninho_Costa",
+            "email": "Isaura_Reis@bol.com.br",
+            "password": "8QNRFdHMlKFMWXf",
+            "administrador": "true",
+            "_id": "KIBFhE3p8hgotRW2"
+        },
+        {
+            "nome": "Marlene Spencer",
+            "email": "Candida_Mayer35@hotmail.com",
+            "password": "9NpuGiRuy5ylzvP",
+            "administrador": "true",
+            "_id": "KQCzl0xidCwnbqbc"
+        },
+        {
+            "nome": "Teri Leuschke",
+            "email": "Luz.Muller33@hotmail.com",
+            "password": "g4OifS38oJWlqzD",
+            "administrador": "true",
+            "_id": "NKQXrpfK48xQFH0u"
+        },
+        {
+            "nome": "Tochie40",
+            "email": "Valdineia10@live.com",
+            "password": "yW4mnIJoS57Q4Ip",
+            "administrador": "true",
+            "_id": "NWAJEs1lPBm62774"
+        },
+        {
+            "nome": "João sem pé de Feijão",
+            "email": "joao@semfeijao.com",
+            "password": "feijao",
+            "administrador": "true",
+            "_id": "OD7EjgYJ1WDvgkNx"
+        },
+        {
+            "nome": "Chelsea Larkin",
+            "email": "Tamia_Rohan@hotmail.com",
+            "password": "_e_CVYlQGF280y5",
+            "administrador": "true",
+            "_id": "Q6foUi0CMURttv3V"
+        },
+        {
+            "nome": "Giorgio.Nogueira",
+            "email": "Dempsey36@gmail.com",
+            "password": "Ugdl6TUPRbgAbP7",
+            "administrador": "true",
+            "_id": "QhiicMzmWB2xGG1t"
+        },
+        {
+            "nome": "Geneva Thompson",
+            "email": "Raleigh.Barton10@yahoo.com",
+            "password": "DMmsXrAKMJDR2Yk",
+            "administrador": "true",
+            "_id": "RMjAxMzfjlsOebhq"
+        },
+        {
+            "nome": "Wade Windler",
+            "email": "Felicity.Barton39@hotmail.com",
+            "password": "sioD3DjRZyXeeCI",
+            "administrador": "true",
+            "_id": "RWkl00eiargoLrqR"
+        },
+        {
+            "nome": "testee",
+            "email": "testee@gmail.com",
+            "password": "teste123321",
+            "administrador": "false",
+            "_id": "SLdtEBUPPGMidPkj"
+        },
+        {
+            "nome": "Katias33",
+            "email": "Bernadete27@yahoo.com",
+            "password": "gm7mPLTgGTOemZy",
+            "administrador": "true",
+            "_id": "T6F1KCNyI4TbGf3p"
+        },
+        {
+            "nome": "Linda Cummerata",
+            "email": "Ryann.Donnelly18@gmail.com",
+            "password": "RR0jcxddaEsw1lP",
+            "administrador": "true",
+            "_id": "Uby4fACCnLH9wy3S"
+        },
+        {
+            "nome": "Mr. Simon Bernier",
+            "email": "Dariana.Leuschke@gmail.com",
+            "password": "fp2y6bQmMlVvtk5",
+            "administrador": "true",
+            "_id": "UodA8rWph8yKOQzx"
+        },
+        {
+            "nome": "João sem pé de alface",
+            "email": "Tracy.Heller50@hotmail.com",
+            "password": "vxNqUl0afI6vC50",
+            "administrador": "true",
+            "_id": "V0q9zeZSveMT5c8z"
+        },
+        {
+            "nome": "Catarina_Xavier8",
+            "email": "Veronica46@bol.com.br",
+            "password": "fAh8TCMuUaPjVhL",
+            "administrador": "true",
+            "_id": "VIi2ZzWzKaMmxcMN"
+        },
+        {
+            "nome": "João sem pé de Feijão4",
+            "email": "Giovanni11@hotmail.com",
+            "password": "LaO0ltX0sfNzeON",
+            "administrador": "true",
+            "_id": "W7dJbANHHYJm5eWA"
+        },
+        {
+            "nome": "Jeffrey Hintz",
+            "email": "Richmond_Emard@yahoo.com",
+            "password": "yYzOCZLJcXijc46",
+            "administrador": "true",
+            "_id": "Xy8mjkHAX3EoS1f1"
+        },
+        {
+            "nome": "Hannah Corkery",
+            "email": "Luz_Hilpert@hotmail.com",
+            "password": "p3Ps8Hi48AIhOuW",
+            "administrador": "true",
+            "_id": "YFBbRXXvBhQVut9N"
+        },
+        {
+            "nome": "Wellington51",
+            "email": "Marcele46@yahoo.com",
+            "password": "otCdUET0j5uEbk2",
+            "administrador": "true",
+            "_id": "bm8dVPFBYvSgRzfj"
+        },
+        {
+            "nome": "Dr. Woodrow Goldner",
+            "email": "Royce.Dooley@hotmail.com",
+            "password": "uPuBfA45osrXe5d",
+            "administrador": "true",
+            "_id": "buQWPcn6exEySEmY"
+        },
+        {
+            "nome": "Ms. Jenny Hahn",
+            "email": "Lavonne86@hotmail.com",
+            "password": "AEXQIUc0qDbDhq_",
+            "administrador": "true",
+            "_id": "cLxpOJNDdvYA81H7"
+        },
+        {
+            "nome": "João sem pé de Feijão3",
+            "email": "joaos@feijao.com",
+            "password": "feijao",
+            "administrador": "false",
+            "_id": "dg4BvbiuCGfE5YHp"
+        },
+        {
+            "nome": "Linda Cummerata",
+            "email": "Ryann.Donnelly18@gmail.com",
+            "password": "RR0jcxddaEsw1lP",
+            "administrador": "true",
+            "_id": "eMd3CWOJN6CGLRBK"
+        },
+        {
+            "nome": "asxcasca",
+            "email": "cascas@cas.com",
+            "password": "csaca",
+            "administrador": "true",
+            "_id": "iG4fVTMBNGiePQr4"
+        },
+        {
+            "nome": "Rosie Bashirian MD",
+            "email": "Leonie.Bins@gmail.com",
+            "password": "4K8cQiFqsIFx4at",
+            "administrador": "true",
+            "_id": "mSTfJtpKvVr0Vx2m"
+        },
+        {
+            "nome": "testeadm",
+            "email": "testeadm@gamil.com",
+            "password": "testeadm123",
+            "administrador": "true",
+            "_id": "nc9NtHb91OcV4fl3"
+        },
+        {
+            "nome": "Yvonne.Franco",
+            "email": "Djanira13@bol.com.br",
+            "password": "IrXKN9V2eogWEW9",
+            "administrador": "true",
+            "_id": "npAOYRdqxVwnbWRF"
+        },
+        {
+            "nome": "Renee Heaney",
+            "email": "Queenie_Konopelski99@gmail.com",
+            "password": "o2VAfU0Kat8VuRN",
+            "administrador": "true",
+            "_id": "sPFPP4hly9UNXIq0"
+        },
+        {
+            "nome": "João sem pé de alface",
+            "email": "Abigale.Gleichner29@hotmail.com",
+            "password": "mN4cPsAvwiBBT9Y",
+            "administrador": "true",
+            "_id": "y9ZyexAG7iX9Oc09"
+        },
+        {
+            "nome": "Dr. Morris Nitzsche",
+            "email": "Jason_Bogisich@hotmail.com",
+            "password": "qz3oqigo3kxFY_u",
+            "administrador": "true",
+            "_id": "ypPAoJDvpenzzj3z"
+        }
+    ]
+} 
+ </msg>
+<msg timestamp="20220711 16:21:11.326" level="INFO">/usr/lib/python3/dist-packages/urllib3/connectionpool.py:1015: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220711 16:21:11.326" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220711 16:21:10.825" endtime="20220711 16:21:11.326"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20220711 16:21:11.328" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220711 16:21:11.327" endtime="20220711 16:21:11.328"/>
+</kw>
+<status status="PASS" starttime="20220711 16:21:10.825" endtime="20220711 16:21:11.328"/>
+</kw>
+<kw name="Validar Status Code &quot;200&quot;" sourcename="validar Status Code &quot;${statuscode}&quot;">
+<kw name="Should Be True" library="BuiltIn">
+<arg>${response.status_code} == ${status_code}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220711 16:21:11.329" endtime="20220711 16:21:11.332"/>
+</kw>
+<status status="PASS" starttime="20220711 16:21:11.329" endtime="20220711 16:21:11.332"/>
+</kw>
+<status status="PASS" starttime="20220711 16:21:10.823" endtime="20220711 16:21:11.333"/>
+</test>
+<doc>Nome do documento para explicar o que o programa faz.</doc>
+<status status="PASS" starttime="20220711 16:21:10.756" endtime="20220711 16:21:11.334"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Estrutura Base">Estrutura Base</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
