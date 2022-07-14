@@ -5,6 +5,7 @@ Library         RequestsLibrary
 Resource        ./usuarios_keywords.robot
 Resource        ./login_keywords.robot
 Resource        ./produtos_keywords.robot
+Resource        ./carrinho_keywords.robot
 
 #Sessão para setagem de variáveis
 * Variables *
@@ -56,21 +57,18 @@ Cenario: DELETE Excluir Produto 200
     Criar um produto e Armazenar ID
     DELETE Endpoint /produtos
     Validar Status Code "200"
-   
+
+Cenario POST Criar Usuario De Massa Estatico 201
+   [Tags]   POSTUSUARIODEMASSA
+   Criar Sessao
+   Criar Usuario Estatico Valido
+   Validar Status Code "201"
 
 
 
 #Sessão para criacao de Keywords Personalizadas
 * Keywords *
 Criar Sessao                                                        
-    Create Session  serverest   http://localhost:3000         
+    Create Session  serverest   http://localhost:3000      
 
-validar Status Code "${statuscode}"
-    Should Be true     ${response.status_code} == ${status_code}
 
-Validar Quantidade "${quantidade}"
-    Should Be Equal     ${response.json()["quantidade"]}    ${quantidade}
-    Log To Console    Response: ${response.content}
- 
-Validar Se Mensagem Contem "${palavra}"    
-    Should Contain    ${response.json()["message"]}    ${palavra}
