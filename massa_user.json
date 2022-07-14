@@ -1,0 +1,27 @@
+{
+    "user_valido": {
+       "nome": "Josias",
+       "email": "jaommss@gmail.com",
+       "password": "teste123",
+       "administrador": "true"
+    },
+    "Outro": {
+        "nome": "VAlido",
+        "email": "naoseiquemsou@gmail.com",
+        "password": "teste",
+        "administrador": "true"
+     },
+     "user_sem_senha": {
+        "nome": "Leandro",
+        "email": "leandro@qa.com",
+        "password": "",
+        "administrador": "true"
+     },
+     "user_sem_email": {
+        "nome": "Leandro",
+        "email": "",
+        "password": "teste123",
+        "administrador": "true"
+     }
+
+}

@@ -1,11 +1,14 @@
 #Sessão para configuração, documentacao, imports de arquivos e librarys
 * Settings *
-Documentation   Nome do documento para explicar o que o programa faz.  
-Library         RequestsLibrary 
-Resource        ./usuarios_keywords.robot
+Documentation   Testes para a API Serverest.  
+Library         RequestsLibrary
+Resource        ./common.robot
 Resource        ./login_keywords.robot
+Resource        ./user_keywords.robot
 Resource        ./produtos_keywords.robot
 Resource        ./carrinho_keywords.robot
+
+
 
 #Sessão para setagem de variáveis
 * Variables *
@@ -15,60 +18,81 @@ Resource        ./carrinho_keywords.robot
 
 #Sessão para criacao dos cenários de teste
 * Test Cases *
-Cenario: Get Todos os usuários 200
-    [Tags]    GET
-    Criar Sessao
-    Get Endpoint /usuarios
-    Validar Status Code "200"
-    Validar Quantidade "${14}"
-
-Cenario: POST Cadastrar usuario 201
-    [Tags]    POST
-    Criar Sessao
-    Post Endpoint /usuarios
-    Validar Status Code "201"
-    Validar Se Mensagem Contem "sucesso"
-Cenario: PUT Editar Usario 200
-    [Tags]    PUT
-    Criar Sessao
-    PUt Endpoint /usuarios
-    Validar Status Code "200"
-Cenario: DELETE Deletar Usuario 200
-    [Tags]    DELETE
-    Criar Sessao
-    Delete Endpoint /usuarios
-    Validar Status Code "200"
 
 Cenario: POST Realizar Login 200
     [Tags]    POSTLOGIN
+    Criar Sessao    
+    Fazer Login e Armazenar Token
+    Validar Ter Logado    
+    validar Status Code "200"
+Cenario: POST Realizar Login 401
+    [Tags]    POSTLOGININVALIDO
+    Criar Sessao    
+    POST Login Estatico Invalido 
+    Status Code Erro Endpoint login 401
+    
+Cenario: GET Todos os usuários 200
+    [Tags]    GETUSUARIOS
     Criar Sessao
-    Post Endpoint /login
+    Get Endpoint /usuarios
     Validar Status Code "200"
-Cenario: POST Criar Produto 201
+
+Cenario: GET Endpoint /usuarios/_id 200
+    [Tags]    GETUSUARIOID
+    Criar Sessao
+    Get Endpoint /usuarios/_id 
+    Validar Status Code "200"
+     
+
+Cenario: GET Endpoint /usuarios/_id INVALIDO
+    [Tags]    GETUSUARIOIDINVALIDO
+    Criar Sessao
+    Validar ID errado
+    Status Code Erro Endpoint usuario/id 400
+
+Cenario: POST Endpoint /usuarios    
+    [Tags]    POSTUSUARIO
+    Criar Sessao
+    POST User Estatico 
+    Validar Status Code "201"
+Cenario: DELETE Endpoint /usuarios
+    [Tags]    DELETEUSUARIO
+    Criar Sessao
+    DELETE Endpoint /usuarios 
+    Validar Status Code "200"
+Cenario: PUT Endpoint /usuarios
+    [Tags]    PUTUSUARIO
+    Criar Sessao
+    PUT User Estatico
+    Validar Status Code "200"
+
+Cenario: GET Endpoint /produtos
+    [Tags]    GETPRODUTOS
+    Criar Sessao
+    GET Endpoint /produtos
+    Validar Status Code "200"
+Cenario: GET Endpoint /produtos ID 200
+    [Tags]    GETPRODUTOSID
+    Criar Sessao
+    GET Endpoint /produtos ID 200
+    Validar Status Code "200"
+Cenario: GET Endpoint /produtos ID 200
     [Tags]    POSTPRODUTO
     Criar Sessao
-    Fazer Login e Armazenar Token
-    Post Endpoint /produtos
+    POST Produto Estatico
     Validar Status Code "201"
-Cenario: DELETE Excluir Produto 200
+Cenario: DELETE Endpoint /produtos ID 200
     [Tags]    DELETEPRODUTO
     Criar Sessao
-    Fazer Login e Armazenar Token
-    Criar um produto e Armazenar ID
-    DELETE Endpoint /produtos
+    DELETE Endpoint /produtos ID 200
     Validar Status Code "200"
-
-Cenario POST Criar Usuario De Massa Estatico 201
-   [Tags]   POSTUSUARIODEMASSA
-   Criar Sessao
-   Criar Usuario Estatico Valido
-   Validar Status Code "201"
-
-
-
-#Sessão para criacao de Keywords Personalizadas
-* Keywords *
-Criar Sessao                                                        
-    Create Session  serverest   http://localhost:3000      
-
-
+Cenario: PUT Endpoint /usuarios    
+    [Tags]    PUTPRODUTO
+    Criar Sessao
+    PUT Produto Estatico
+    Validar Status Code "201"
+Cenario: Get Endpoint /usuarios 200
+    [Tags]    GETCARRINH0
+    Criar Sessao
+    Get Endpoint /usuarios 200
+    Validar Status Code "200"

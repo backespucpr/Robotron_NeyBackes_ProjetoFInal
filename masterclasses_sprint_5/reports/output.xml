@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on linux)" generated="20220714 17:29:52.736" rpa="false" schemaversion="3">
+<suite id="s1" name="Base" source="/home/neybackes/Documentos/Robotron_NeyBackes_ProjetoFInal/base.robot">
+<test id="s1-t1" name="Cenario: POST Realizar Login 200" line="42">
+<kw name="Criar Sessao">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>serverest</arg>
+<arg>http://localhost:3000</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220714 17:29:52.854" level="INFO">Creating Session using : alias=serverest, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220714 17:29:52.854" endtime="20220714 17:29:52.854"/>
+</kw>
+<status status="PASS" starttime="20220714 17:29:52.853" endtime="20220714 17:29:52.854"/>
+</kw>
+<kw name="Post Endpoint /login" library="login_keywords">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${payload}</var>
+<arg>email=${email_para_login}</arg>
+<arg>password=${senha_para_login}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220714 17:29:52.856" level="INFO">${payload} = {'email': 'fulano@qa.com', 'password': 'teste123'}</msg>
+<status status="PASS" starttime="20220714 17:29:52.855" endtime="20220714 17:29:52.856"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>serverest</arg>
+<arg>/login</arg>
+<arg>data=${payload}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20220714 17:29:52.864" level="INFO">POST Request : url=http://localhost:3000/login 
+ path_url=/login 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '39', 'Content-Type': 'application/x-www-form-urlencoded'} 
+ body=email=fulano%40qa.com&amp;password=teste123 
+ </msg>
+<msg timestamp="20220714 17:29:52.864" level="INFO">POST Response : url=http://localhost:3000/login 
+ status=401, reason=Unauthorized 
+ headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': '7117799c-b414-4600-a6a5-ba3433f3f349', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '48', 'Date': 'Thu, 14 Jul 2022 20:29:52 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={
+    "message": "Email e/ou senha inválidos"
+} 
+ </msg>
+<msg timestamp="20220714 17:29:52.865" level="FAIL">HTTPError: 401 Client Error: Unauthorized for url: http://localhost:3000/login</msg>
+<status status="FAIL" starttime="20220714 17:29:52.856" endtime="20220714 17:29:52.866"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Response: ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220714 17:29:52.867" endtime="20220714 17:29:52.867"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20220714 17:29:52.867" endtime="20220714 17:29:52.867"/>
+</kw>
+<status status="FAIL" starttime="20220714 17:29:52.854" endtime="20220714 17:29:52.868"/>
+</kw>
+<kw name="Validar Status Code &quot;401&quot;" library="common" sourcename="validar Status Code &quot;${statuscode}&quot;">
+<status status="NOT RUN" starttime="20220714 17:29:52.869" endtime="20220714 17:29:52.869"/>
+</kw>
+<tag>POSTLOGIN</tag>
+<status status="FAIL" starttime="20220714 17:29:52.852" endtime="20220714 17:29:52.870">HTTPError: 401 Client Error: Unauthorized for url: http://localhost:3000/login</status>
+</test>
+<doc>Nome do documento para explicar o que o programa faz.</doc>
+<status status="FAIL" starttime="20220714 17:29:52.739" endtime="20220714 17:29:52.871"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">POSTLOGIN</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Base">Base</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
