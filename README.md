@@ -28,7 +28,7 @@
   
   ## Querido Compasser, seja bem vindo!
 
-## Este repositório contém as atividades realizadas durante as duas semanas da Sprint 5. Aqui você vai encontrar as atividades das Master Classes além de um exemplo desenvolvido por min para objetivo de aprendizado desta etapa.
+## Este repositório contém as atividades realizadas durante as duas semanas da Sprint 5. Aqui você vai encontrar as atividades das Master Classes além de um exemplo desenvolvido por min com o objetivo de fixar o aprendizado.
 
   
  </div>
@@ -38,10 +38,9 @@
 <tr><th> Atividades </a></th></tr>
 <tr><td>
 
-Atividade | Data | Ajuda |
+Atividade | Data | Obs |
 ---- | ---- | ----  
-[Pasta_aualas](https://github.com/backespucpr/Compass_NeyBackes_Robot/blob/DEVELOP/python_exercicios_sintaxe/atividade_1.py "Atividade 1") | 28/06 | Não |
-[testes](https://github.com/backespucpr/Compass_NeyBackes_Robot/blob/DEVELOP/python_exercicios_sintaxe/atividade_1.py "Atividade 1") | 28/06 | Não |
+[Master Class Robot](https://github.com/backespucpr/Robotron_NeyBackes_ProjetoFInal/tree/DEVOLOP/masterclasses_sprint_5 "Sprint 5") | 14/07 | Estas são todas atividades realizadas durantes as Masterclasses desta Sprint. |
 
  </table>
 </div>
@@ -90,7 +89,7 @@ Seus recursos de teste podem ser estendidos por bibliotecas de teste implementad
 O projeto do Robot Framework está hospedado no GitHub, onde você pode encontrar mais documentação, código-fonte e rastreador de problemas.
 
 <div>   
-   <a href="https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html" target="_blank">-Robot User Guide</a><br>
+   <a href="https://auditeste.com.br/o-que-e-ferramenta-robot-framework-e-como-ela-funciona/" target="_blank">Saiba Mais</a><br>
 </div>
    
 
@@ -171,8 +170,8 @@ Biblioteca | Versão | Utilização |
 
 ## Rodando o Serverest localmente
 
-Para evitar problemas ou falhar utilizando o servidor você pode rodar uma versão local do Serverest para utilizar em seus testes.
- - Utilzer o comando no seu terminal: npx serverest (mantenha o terminal aberto)
+Para evitar problemas ou falhas utilizando o servidor você pode rodar uma versão local do Serverest para utilizar em seus testes.
+ - Utilze o comando no seu terminal: npx serverest (mantenha o terminal aberto)
  
 
 <div> 
@@ -194,16 +193,109 @@ Para evitar problemas ou falhar utilizando o servidor você pode rodar uma vers�
  <div> 
    <img src="https://user-images.githubusercontent.com/105370199/178848826-210d6528-9c47-4b7b-91fa-1c2873cf4e3c.png" width="800px" />
 </div>
+
+## Na prática
+
+ <div> 
+   <img src="https://user-images.githubusercontent.com/105370199/178871934-8bab8f20-7173-4134-835f-5715369da3fe.gif" width="800px" />
+</div>
   
   ## Test Case
   
-  ### Abaixo estão os cados de teste desenvolvidos para serem utilizadas nos teste com a API Serverest.
+  ### Abaixo estão os casos de teste desenvolvidos para serem utilizadas nos teste com a API Serverest.
   
-  - <strong>Login</Strong>
-     - teste
-  - <strong>Usuario</Strong>
-     - teste
-  - <strong>Produtos</Strong>
-     - Teste
-  - <strong>Carrinho</Strong>
-     - Teste
+```python
+
+
+-----------------------------------
+
+
+- LOGIN
+    - POST 
+
+        Validações Positivas        
+            - Validar Login 
+            - Status Code "200"
+            - Mensagem de retorno "realizado com sucesso"            
+        Validações Negativas
+            - Requisição com senha inválida
+            - Requisicao com email inválido 
+            - Status com "400"
+- Usuarios
+    - GET
+        - Listar todos os usuarios
+        - Listar usuario pela id  "200"
+        - Validações Negativas
+            - Validar Usuario não encontrado "400"
+    - POST
+        - Cadastrar usuario "201"
+        
+   - DELETE
+        - Deletar um usuario  "200"
+    
+    - PUT 
+        - Atualizar dados de um usuario "200" 
+- Produtos
+    - GET
+        - LIstar todos os produtos
+        - Listar usuario pela id  "200"
+    - POST
+        - Cadastrar produto "201"
+    - DELETE
+        - Deletar um produto "200"
+    - PUT 
+        - Atualizar dados de um produto "200"
+- Carrinho
+    - GET 
+        - Listar todos os carrinho "200"
+        
+
+
+
+```
+
+## Agradecimentos
+
+
+<strong>Mentoria</strong>
+
+<div>   
+   <a href="https://github.com/DemetrioWebber" target="_blank">Demetrio Webber </a><br>
+   <a href="https://github.com/matheuslocatelli" target="_blank">Matheus Locatelli</a><br>   
+</div>
+
+<br>
+
+<strong>Colegas que ajudaram na resolução das atividades e na elaboração deste projeto</strong>
+
+<br>
+
+<div>   
+   <a href="https://github.com/manuel-valdes" target="_blank">Manuel Valdes </a><br>   
+</div>
+
+<br>
+
+
+<br>
+<strong>Referências Bibliográfica Complementares</strong>
+<br>
+<br>
+
+<div>   
+   <a href="https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html" target="_blank">- Reques Library</a><br>
+   <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html" target="_blank">- Bult in</a><br>
+   <a href="https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html" target="_blank">- Robot User Guide</a><br>
+ <br>
+   
+</div>
+
+## Em caso de dúvidas ou sugestões entre em contato
+   
+   </div>
+<div style="display: inline_block">
+  <a href="https://www.linkedin.com/in/silvioney-backes-27673b214/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+  <a href="backesney@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a>  
+  </div>
+  <br>
+  <br>

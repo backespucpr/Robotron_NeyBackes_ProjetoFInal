@@ -37,3 +37,6 @@
         - Deletar um produto "200"
     - PUT 
         - Atualizar dados de um produto "200"
+- Carrinho
+    - GET 
+        - Listar todos os carrinho "200"
