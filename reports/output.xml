@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on linux)" generated="20220714 20:52:30.453" rpa="false" schemaversion="3">
+<suite id="s1" name="Base" source="/home/neybackes/Documentos/projeto_teste_serverest/base.robot">
+<test id="s1-t1" name="Cenario: Get Endpoint /usuarios 200" line="94">
+<kw name="Criar Sessao" library="common">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>serverest</arg>
+<arg>http://localhost:3000</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220714 20:52:30.567" level="INFO">Creating Session using : alias=serverest, url=http://localhost:3000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220714 20:52:30.566" endtime="20220714 20:52:30.567"/>
+</kw>
+<status status="PASS" starttime="20220714 20:52:30.566" endtime="20220714 20:52:30.567"/>
+</kw>
+<kw name="Get Endpoint /usuarios 200" library="carrinho_keywords">
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>serverest</arg>
+<arg>/carrinho/qbMqntef4iTOwWfg</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220714 20:52:30.574" level="INFO">GET Request : url=http://localhost:3000/carrinho/qbMqntef4iTOwWfg 
+ path_url=/carrinho/qbMqntef4iTOwWfg 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20220714 20:52:30.574" level="INFO">GET Response : url=http://localhost:3000/carrinho/qbMqntef4iTOwWfg 
+ status=405, reason=Method Not Allowed 
+ headers={'Access-Control-Allow-Origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'x-moesif-transaction-id': 'e9cc05ab-297f-4de6-b02c-a9aaf25535ab', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '163', 'Date': 'Thu, 14 Jul 2022 23:52:30 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={
+    "message": "Não é possível realizar GET em /carrinho/qbMqntef4iTOwWfg. Acesse http://localhost:3000 para ver as rotas disponíveis e como utilizá-las."
+} 
+ </msg>
+<msg timestamp="20220714 20:52:30.575" level="FAIL">HTTPError: 405 Client Error: Method Not Allowed for url: http://localhost:3000/carrinho/qbMqntef4iTOwWfg</msg>
+<status status="FAIL" starttime="20220714 20:52:30.568" endtime="20220714 20:52:30.576"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" starttime="20220714 20:52:30.576" endtime="20220714 20:52:30.577"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Response: ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220714 20:52:30.577" endtime="20220714 20:52:30.577"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Status: ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" starttime="20220714 20:52:30.577" endtime="20220714 20:52:30.577"/>
+</kw>
+<status status="FAIL" starttime="20220714 20:52:30.567" endtime="20220714 20:52:30.577"/>
+</kw>
+<kw name="Validar Status Code &quot;200&quot;" library="common" sourcename="validar Status Code &quot;${statuscode}&quot;">
+<status status="NOT RUN" starttime="20220714 20:52:30.578" endtime="20220714 20:52:30.578"/>
+</kw>
+<tag>GETCARRINH0</tag>
+<status status="FAIL" starttime="20220714 20:52:30.565" endtime="20220714 20:52:30.579">HTTPError: 405 Client Error: Method Not Allowed for url: http://localhost:3000/carrinho/qbMqntef4iTOwWfg</status>
+</test>
+<doc>Testes para a API Serverest.</doc>
+<status status="FAIL" starttime="20220714 20:52:30.455" endtime="20220714 20:52:30.580"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">GETCARRINH0</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Base">Base</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
