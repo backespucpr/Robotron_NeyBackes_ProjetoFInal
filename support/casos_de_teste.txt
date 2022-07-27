@@ -1,0 +1,22 @@
+# Cenarios de teste API Serverest
+-----------------------------------
+
+
+- LOGIN
+    POST 
+        Validações Positivas        
+            - Validar Login 
+            - Status Code "200"
+            - Mensagem de retorno "realizado com sucesso"            
+        Validações Negativas
+            - Requisição com senha inválida                
+            - Requisicao com email inválido
+                - Status Code "401"
+                - Mensagem de retorno "Email e/ou senha inválidos"
+            # Validações não na cobertura da documentação Serverest
+            - Requisicao com senha em branco ""
+                - Status Code "400"
+                - Mensagem de retorno "password não pode ficar em branco"
+            - Requisicao com email em branco ""
+                 - Status Code "400"
+                 - Mensagem de retorno "email não pode ficar em branco"
