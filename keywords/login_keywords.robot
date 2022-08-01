@@ -70,5 +70,11 @@ POST Login Estatico Login Administrator False
     POST Endpoint /login
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+#login para usuario exluido antes de POST PRODUTO ou POST CARRINHO
+POST Login Usuario Excluido
+    ${json}     Importar Json Estatico  massa_login.json
+    ${payload}  SET Variable     ${json["login_usuario_excluido"]}
+    Set Global Variable     ${payload}
+    POST Endpoint /login
 
 
