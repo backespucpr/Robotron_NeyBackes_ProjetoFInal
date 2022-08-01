@@ -4,7 +4,7 @@
       "user_para_administrador_false":
        {
             "nome": "Ney Backes",
-            "email": "novobackes@qa.com.br",
+            "email": "fulano@qa.com",
             "password": "teste",
             "administrador": "false"
       },
@@ -15,6 +15,13 @@
             "password": "teste",
             "administrador": "false"
 
+      },
+      "teste_usuario_correto":
+      {
+            "nome": "Fulano da Silva",
+            "email": "fulano@qa.com.br",
+            "password": "teste",
+            "administrador": "true"
       }
    
      

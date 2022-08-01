@@ -17,7 +17,7 @@ Suite Setup     Criar Sessao
 Cenario: POST Produto 201
     [Tags]  POST_PRODUTO
     Iniciar cores de resposta
-    POST Login Estatico Valido
+    POST Login Valido Usando FUNCAO
     POST Cadastro Produto Estatico Valido
     Imprimir Produto Response.Content
     Resposta Produto Cadastrado 
@@ -27,7 +27,7 @@ Cenario: POST Produto 201
 Cenario: POST Produto Repetido 400
     [Tags]  POST_PRODUTREPETIDO
     Iniciar cores de resposta
-    POST Login Estatico Valido
+    POST Login Valido Usando FUNCAO
     POST Cadastro Produto Estatico Repetido
     Imprimir Produto Response.Content
     Resposta Produto Repetido
@@ -36,7 +36,7 @@ Cenario: POST Produto Repetido 400
 Cenario: POST Produto Token Invalido 401
     [Tags]  POST_PRODUTO_TOKEN_INVALIDO
     Iniciar cores de resposta
-    POST Login Estatico Valido
+    POST Login Valido Usando FUNCAO
     POST Cadastro Produto Token Invalido
     Imprimir Produto Response.Content
     Resposta Produto Token Invalido
@@ -67,7 +67,7 @@ Cenario: POST Produto ADM False 403
 Cenario: GET Listar Produtos 200
     [tags]  GET_PRODUTOS
     Iniciar cores de resposta
-    POST Login Estatico Valido
+    POST Login Valido Usando FUNCAO
     GET Endpoint /produtos
     validar Status Code "200"
 
@@ -75,15 +75,14 @@ Cenario: GET Listar Produtos 200
 Cenario: GET Listar Produto ID 200
     [Tags]  GET_PRODUTO_ID
     Iniciar cores de resposta
-    POST Login Estatico Valido
-    GET Endpoint /produtos
-    GET Endpoint Estatico /produtos/_id
+    POST Login Valido Usando FUNCAO
+    GET Endpoint FUNCAO /produtos/_id
     validar Status Code "200"
 
 Genario: GET Listar Produto ID Não Encontrado 400
     [Tags]    GET_PRODUTO_ID_NAO_ENCONTRADO
     Iniciar cores de resposta
-    POST Login Estatico Valido
+    POST Login Valido Usando FUNCAO
     GET Endpoint Estatico /produto/_id Nao Encontrado
     Resposta Produto Não Encontrado
     validar Status Code "400"
@@ -91,7 +90,7 @@ Genario: GET Listar Produto ID Não Encontrado 400
 Cenario; PUT Alterar Produto Cadastrado 200
     [Tags]  PUT_PRODUTO
     Iniciar cores de resposta
-    POST Login Estatico Valido
+    POST Login Valido Usando FUNCAO
     POST Cadastro Produto Estatico Valido
     PUT Cadastro Produto Estatico Valido    
     Resposta Produto Alterado 
@@ -101,7 +100,7 @@ Cenario; PUT Alterar Produto Cadastrado 200
 Cenario: PUT Alterar Produto Sem ID 201
     [Tags]  PUT_PRODUTO_SEM_ID
     Iniciar cores de resposta
-    POST Login Estatico Valido
+    POST Login Valido Usando FUNCAO
     PUT Alterar Produto Estatico Valido Sem ID
     Resposta Produto Alterado Sem ID
     validar Status Code "201"
@@ -110,7 +109,7 @@ Cenario: PUT Alterar Produto Sem ID 201
 Cenario: PUT Alterar Produto Nome Repetido 400
     [Tags]  PUT_PRODUTO_NOME_REPETIDO
     Iniciar cores de resposta
-    POST Login Estatico Valido
+    POST Login Valido Usando FUNCAO
     POST Cadastro Produto Estatico Valido
     PUT Cadastro Produto Estacico Nome Repetid0
     Resposta Produto Nome Repetido
@@ -119,7 +118,7 @@ Cenario: PUT Alterar Produto Nome Repetido 400
 Cenario: PUT Alterar Produto Token Invalido 401
     [Tags]  PUT_PRODUTO_TOKEN_INVALIDO
     Iniciar cores de resposta
-    POST Login Estatico Valido      
+    POST Login Valido Usando FUNCAO 
     PUT Alteracao Produto Token Invalido
     Resposta Produto Token Invalido
     validar Status Code "401"
@@ -147,7 +146,7 @@ Cenario: PUT Alterar Produto ADM False 403
 Cenario: DELETE Produto Cadastrado 200
     [Tags]  DELETE_PRODUTO
     Iniciar cores de resposta
-    POST Login Estatico Valido
+    POST Login Valido Usando FUNCAO
     POST Cadastro Produto Estatico Valido
     DELETE Endpoint /produtos
     Imprimir Delete Produto Response.Content
@@ -157,7 +156,7 @@ Cenario: DELETE Produto Cadastrado 200
 Cenario: DELETE Excluir Produto ID Inexistente 200
     [Tags]    DELETE_PRODUTO_ID_INEXISTENTE
     Iniciar cores de resposta
-    POST Login Estatico Valido
+    POST Login Valido Usando FUNCAO
     DELETE Endpoint /produtos Nao Encontrado
     Imprimir Delete Produto Response.Content
     Resposta Delete Produto ID inexistente
@@ -166,7 +165,7 @@ Cenario: DELETE Excluir Produto ID Inexistente 200
 Cenario: DELETE Excluir Produto Carrinho Cadastrado 400
     [Tags]  DELETE_PRODUTO_CARRINHO_CADASTRADO
     Iniciar cores de resposta
-    POST Login Estatico Valido
+    POST Login Valido Usando FUNCAO
     DELETE Endpoint /produtos Carrinho Cadastrado
     Imprimir Delete Produto Response.Content
     Resposta Produto Excluido Carrinho Cadastrado
@@ -175,7 +174,7 @@ Cenario: DELETE Excluir Produto Carrinho Cadastrado 400
 Cenario: DELETE Excluiar Produto Token Invalido 401
     [Tags]  DELETE_PRODUTO_TOKEN_INVALIDO
     Iniciar cores de resposta
-    POST Login Estatico Valido
+    POST Login Valido Usando FUNCAO
     DELETE Endpoint /produtos Token Invalido
     Imprimir Delete Produto Response.Content
     Resposta Produto Token Invalido

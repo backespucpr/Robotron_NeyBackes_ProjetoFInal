@@ -5,6 +5,10 @@ Documentation   Arquivos de teste para o endpoint de /login
 Resource        ../keywords/login_keywords.robot
 
 Suite Setup     Criar Sessao
+ 
+
+
+
 
 #Sessão para criacao dos cenários de teste
 * Test Cases *
@@ -13,8 +17,8 @@ Suite Setup     Criar Sessao
 
 Cenario: POST Realizar Login 200
     [Tags]    POST_LOGIN
-    Iniciar cores de resposta
-    POST Login Estatico Valido
+    Iniciar cores de resposta    
+    POST Login Valido Usando FUNCAO
     Imprimir Login Response.Content
     Resposta Login Valido     
     validar Status Code "200"    

@@ -37,7 +37,7 @@ Criar Dados Dinamicos Cadastro Email Repetido
     ${nome}             FakerLibrary.Name
     ${email}            FakerLIbrary.Email
     ${password}         FakerLibrary.Password
-    ${payload}          Create Dictionary        nome=${nome}      email=fulano@qa.com    password=${password}     administrador=true
+    ${payload}          Create Dictionary        nome=${nome}      email=fulano@qa.com.br    password=${password}     administrador=true
     [return]            ${payload}
 
 

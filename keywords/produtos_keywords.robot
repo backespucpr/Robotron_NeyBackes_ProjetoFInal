@@ -1,7 +1,8 @@
 #Sessão para configuração, documentacao, imports de arquivos e librarys
 * Settings *
 Documentation   Ações e variáveis para o endpoint /produtos
-Resource        ../support/base.robot        
+Resource        ../support/base.robot
+Library         ../support/library_python.py
 
 
 #Sessão para criacao de Keywords Personalizadas
@@ -12,7 +13,7 @@ Resource        ../support/base.robot
 
 POST Endpoint Produtos
     ${header}    Create Dictionary     Authorization=${token_auth}    
-    ${response}     POST on Session      serverest         /produtos    data=${payload}    headers=${header}         expected_status=anything
+    ${response}     POST on Session      serverest         /produtos    json=${payload}    headers=${header}         expected_status=anything
     SET Global Variable     ${response}      
     IF    ${response.status_code} == 201
         ${produto_id}      SET Variable     ${response.json()["_id"]}  
@@ -55,21 +56,23 @@ POST Cadastro Produto Token Invalido
     ${token_auth}    Set Variable      Não e um TOKEN   
     Set Global Variable     ${token_auth}
     POST Cadastro Produto Estatico Repetido
-
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Reposta produto TOKE invalido     
+
 Resposta Produto Token Invalido
     Should Contain      ${response.json()["message"]}   Token de acesso ausente, inválido, expirado ou usuário do token não existe mais
-
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Reposta para produto com adm false
+
 Resposta Produto Cadastrado Administrador False
     Should Contain  ${response.json()["message"]}   Rota exclusiva para administradores
-
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Resposta user exluido
+
 Resposta Produto Cadastrado Usuario excluido
     Should Contain  ${response.json()["message"]}   Token de acesso ausente, inválido, expirado ou usuário do token não existe mais
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
-
 #listar produtos cadastrados
 GET Endpoint /produtos    
     ${response}     GET on Session      serverest         /produtos    
@@ -77,14 +80,13 @@ GET Endpoint /produtos
     Log to console    ${yellow}Resposta para Produtos Cadastrados:${yellow} ${green}${response.content}${green}
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
-
 #listar produtos por ID
-GET Endpoint Estatico /produtos/_id       
-    ${response}    GET on Session      serverest         /produtos/${response.json()["produtos"][0]["_id"]}  
+GET Endpoint FUNCAO /produtos/_id
+    ${json}        buscar produto       
+    ${response}    GET on Session      serverest         /produtos/${json}  
     Set Global Variable     ${response}    
     Log to console     ${yellow}Resposta para Produto Cadastrados ID:${yellow} ${green}${response.content}${green} 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
-
 #listar produtos por ID inexistente
 GET Endpoint Estatico /produto/_id Nao Encontrado
     ${response}     GET on Session      serverest         /produtos/idinexistente  expected_status=anything
@@ -94,7 +96,8 @@ Resposta Produto Não Encontrado
     Should Be Equal    ${response.json()["message"]}   Produto não encontrado
 
 
-
+#---------------------------------------------------------------------------------------------------------------------------------------------------------
+#ALterar produto
 PUT Endpoint Produtos
     ${header}    Create Dictionary     Authorization=${token_auth}    
     ${response}     PUT on Session      serverest         /produtos/${produto_id}    data=${payload}    headers=${header}         expected_status=anything         
@@ -111,7 +114,6 @@ PUT Endpoint Produtos
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 #Alterar produto cadastrado
-
 PUT Cadastro Produto Estatico Valido
     ${json}     Importar Json Estatico  massa_produtos.json    
     ${payload}  SET Variable     ${json["produto_para_alteracao"]}
@@ -122,7 +124,6 @@ Resposta Produto Alterado
     Should Be Equal    ${response.json()["message"]}    Registro alterado com sucesso
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 #Alterar produto sem ID 
-
 PUT Alterar Produto Estatico Valido Sem ID
     ${json}     Importar Json Estatico  massa_produtos.json    
     ${payload}  SET Variable     ${json["produto_para_alteracao"]}
@@ -136,7 +137,6 @@ Resposta Produto Alterado Sem ID
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 #Alterar produto com nome repetido    
-
 PUT Cadastro Produto Estacico Nome Repetid0
     ${json}     Importar Json Estatico  massa_produtos.json    
     ${payload}  SET Variable     ${json["produto_nome_repetido"]}
@@ -147,14 +147,12 @@ Resposta Produto Nome Repetido
     Should Be Equal    ${response.json()["message"]}    Já existe produto com esse nome
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 # Cadastro com produto Token Invalido
-
 PUT Alteracao Produto Token Invalido
     ${token_auth}    Set Variable      Não e um TOKEN   
     Set Global Variable     ${token_auth}
     PUT Alterar Produto Estatico Valido Sem ID
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 # Deletar Produto Cadastrado
-
 DELETE Endpoint /produtos  
     ${header}    Create Dictionary     Authorization=${token_auth} 
     ${response}     DELETE on Session      serverest         /produtos/${produto_id}    headers=${header}    expected_status=anything            
@@ -175,9 +173,10 @@ Resposta Delete Produto ID inexistente
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 #Deletar produto com carrinho cadastrado
 
-DELETE Endpoint /produtos Carrinho Cadastrado
-    ${header}    Create Dictionary     Authorization=${token_auth} 
-    ${response}     DELETE on Session      serverest         /produtos/BeeJh5lz3k6kSIzA     headers=${header}    expected_status=anything 
+DELETE Endpoint /produtos Carrinho Cadastrado         
+    ${header}    Create Dictionary     Authorization=${token_auth}
+    ${json}      buscar produto 
+    ${response}     DELETE on Session      serverest         /produtos/${json}      headers=${header}    expected_status=anything 
     SET Global Variable     ${response}
 
 Resposta Produto Excluido Carrinho Cadastrado
@@ -189,11 +188,13 @@ Resposta Produto Excluido Carrinho Cadastrado
 
 DELETE Endpoint /produtos Token Invalido
     ${token_auth}    Set Variable      Não e um TOKEN 
-    ${header}    Create Dictionary     Authorization=${token_auth} 
-    ${response}     DELETE on Session      serverest         /produtos/BeeJh5lz3k6kSIzA     headers=${header}    expected_status=anything 
+    ${header}    Create Dictionary     Authorization=${token_auth}
+    ${json}      buscar produto 
+    ${response}     DELETE on Session      serverest         /produtos/${json}     headers=${header}    expected_status=anything 
     SET Global Variable     ${response}
     SET Global Variable     ${token_auth}  
-
+#---------------------------------------------------------------------------------------------------------------------------------------------------------
+#Imprimir a respota para DELETE 
 
 Imprimir Delete Produto Response.Content
     Log to console     ${yellow}Resposta para Produto Deletado:${yellow} ${red}${response.content}${red} 

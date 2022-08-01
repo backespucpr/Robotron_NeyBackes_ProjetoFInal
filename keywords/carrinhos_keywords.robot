@@ -1,7 +1,8 @@
 #Sessão para configuração, documentacao, imports de arquivos e librarys
 * Settings *
 Documentation   Ações e variáveis para o endpoint /carrinhos
-Resource        ../support/base.robot        
+Resource        ../support/base.robot
+Library         ../support/library_python.py        
 
 
 #Sessão para criacao de Keywords Personalizadas
@@ -36,13 +37,13 @@ POST Cadastro Carrinho Estatico Valido
 Resposta Carrinho Cadastrado  
     Should Contain         ${response.json()["message"]}       Cadastro realizado com sucesso
     Should not be empty    ${response.json()["_id"]}   
-
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Resposta para POST um carrinho por cadastro
 Reposta Um carrinho Por Cadastro
     Should Contain         ${response.json()["message"]}       Não é permitido ter mais de 1 carrinho
      
 #------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Relizar POST de carrinho valido 
-
 POST Cadastro Carrinho Produto Repetido
     ${json}     Importar Json Estatico  massa_carrinho.json
     ${payload}  SET Variable     ${json["carrinhos_produto_repetido"]}   
@@ -82,7 +83,8 @@ POST Cadastro Carrinho Token Invalido
 
 Resposta Carrinho Token Invalido
     Should Contain      ${response.json()["message"]}   Token de acesso ausente, inválido, expirado ou usuário do token não existe mais
-
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
+#Resposta para POST com toke de usuario excluido
 Resposta Carrinho Cadastrado Usuario excluido
     Should Contain      ${response.json()["message"]}   Token de acesso ausente, inválido, expirado ou usuário do token não existe mais
 
@@ -97,8 +99,9 @@ GET Endpoint /carinhos
 #------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Buscar carrinho ID
 
-GET Endpoint Estatico /carrinhos/_id
-    ${response}     GET on Session      serverest         /carrinhos/${response.json()["carrinhos"][0]["_id"]}      expected_status=anything
+GET Endpoint FUNCAO /carrinhos/_id
+    ${json}         buscar carrinho
+    ${response}     GET on Session      serverest         /carrinhos/${json}     expected_status=anything
     Set Global Variable     ${response}
     Log to console     ${yellow}Resposta para Produto Cadastrados ID:${yellow} ${green}${response.content}${green} 
 

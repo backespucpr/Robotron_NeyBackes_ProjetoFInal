@@ -1,5 +1,7 @@
 *** Settings ***
 Documentation    Keyword e Variaves para acoes gerais
+       
+
 
 
 
@@ -15,7 +17,11 @@ Documentation    Keyword e Variaves para acoes gerais
 
 # Iniciar Sessão Serverest 
 Criar Sessao                                                        
-    Create Session  serverest   ${base_uri}    
+    Create Session  serverest   ${base_uri}
+   
+
+      
+
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -41,12 +47,8 @@ Importar Json Estatico
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Keyword de cores para o log de console
 Iniciar cores de resposta
-  ${black}=  Evaluate  ${BLACK}
-  Set Test Variable  ${black}
   ${red}=  Evaluate  ${RED}
   Set Test Variable  ${red}
-  ${white}=  Evaluate  ${WHITE} 
-  Set Test Variable  ${white}
   ${yellow}=  Evaluate  ${YELLOW}  
   Set Test Variable  ${yellow}
   ${green}=  Evaluate  ${GREEN}  

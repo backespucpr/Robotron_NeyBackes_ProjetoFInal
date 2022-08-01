@@ -1,7 +1,8 @@
 #Sessão para configuração, documentacao, imports de arquivos e librarys
 * Settings *
 Documentation   Ações e variáveis para o endpoint /login.
-Resource        ../support/base.robot        
+Resource        ../support/base.robot
+Library         ../support/library_python.py       
 
 
 #Sessão para criacao de Keywords Personalizadas
@@ -13,7 +14,8 @@ POST Endpoint /login
     #Condição para verificar se o login foi realizado com sucesso para coletar o token
     IF    ${response.status_code} == 200
         ${token_auth}    Set Variable      ${response.json()["authorization"]}   
-        Set Global Variable     ${token_auth}             
+        Set Global Variable     ${token_auth} 
+           
     END
     SET Global Variable     ${response}
 #Imprimir conteudo da resposta no console
@@ -25,9 +27,9 @@ Imprimir Login Response.Content
     END   
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Login Válido com dados estatitcos
-POST Login Estatico Valido
-    ${json}     Importar Json Estatico  massa_login.json
-    ${payload}  SET Variable     ${json["login_valido"]}
+POST Login Valido Usando FUNCAO
+    ${json}     login_padrao
+    ${payload}  SET Variable     ${json}
     Set Global Variable     ${payload}
     POST Endpoint /login
 #validando a mensagem de sucesso

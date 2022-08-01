@@ -1,7 +1,8 @@
 #Sessão para configuração, documentacao, imports de arquivos e librarys
 * Settings *
 Documentation   Ações e variáveis para o endpoint /usuarios
-Resource        ../support/base.robot        
+Resource        ../support/base.robot
+Library         ../support/library_python.py        
 
 
 #Sessão para criacao de Keywords Personalizadas
@@ -15,6 +16,7 @@ POST Endpoint /usuarios
         ${user_id}      SET Variable     ${response.json()["_id"]}  
         Set Global Variable     ${user_id}        
     END  
+    
 #Imprimir conteudo da resposta no console
 Imprimir Usuario Response.Content
    IF  ${response.status_code} == 200 or ${response.status_code} == 201 
@@ -22,6 +24,7 @@ Imprimir Usuario Response.Content
         ELSE
             Log to console     ${yellow}Resposta para Cadastro de Usuario:${yellow} ${red}${response.content}${red} 
     END
+
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------
 # Cadastro de Usuario com dados dinamicos
 POST Cadastro Usuario Dinamico Valido
@@ -40,20 +43,21 @@ POST Cadastro Usuario Dinamico Email Repetido
     POST Endpoint /usuarios
 Resposta Usuario Email Repetido
     Should Be Equal    ${response.json()["message"]}    Este email já está sendo usado
-
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Cadastro de usuario estatico
 POST Cadastro Usuario Estatico Valido
     ${json}     Importar Json Estatico  massa_user.json
     ${payload}  SET Variable     ${json["user_estatico_para_cadastro"]}    
     Set Global Variable     ${payload}    
-    POST Endpoint /usuarios   
+    POST Endpoint /usuarios  
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 #Cadastro de usario estatico ADM false
 POST Cadastro Usuario Estatico ADM False
     ${json}     Importar Json Estatico  massa_user.json
     ${payload}  SET Variable     ${json["user_para_administrador_false"]}    
     Set Global Variable     ${payload}    
     POST Endpoint /usuarios  
-
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Buscando todos os usuarios
@@ -64,9 +68,10 @@ GET Endpoint /usuarios
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Bucando usuario por id
-GET Endpoint Estatico /usuarios/_id       
-    ${response}    GET on Session      serverest         /usuarios/${response.json()["usuarios"][0]["_id"]}  
-    Set Global Variable     ${response}    
+GET Endpoint FUNCAO /usuarios/_id
+    ${json}        buscar usuario       
+    ${response}    GET on Session      serverest         /usuarios/${json}  
+    Set Global Variable     ${response}
     Log to console     ${yellow}Resposta para Usuario Cadastrados ID:${yellow} ${green}${response.content}${green}
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------   
 #Buscando usuario por ID inexistente
@@ -90,8 +95,7 @@ PUT Endpoint /usuarios
         ${user_id}      SET Variable     ${response.json()["_id"]}  
         Set Global Variable     ${user_id}        
     END     
-    SET Global Variable     ${response}
-     
+    SET Global Variable     ${response}    
     
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    
 
@@ -104,7 +108,7 @@ Resposta Cadastro Usuario Alterado
     Should Be Equal    ${response.json()["message"]}    Registro alterado com sucesso
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    
 # Alterar cadsatro com usuario sem ID
-PUT Alterar Cadastro Usuario Diamico Valido Sem ID
+PUT Alterar Usuario Diamico Valido Sem ID
     ${payload}      Criar Dados Dinamicos para Alteracao Valido
     Set Global Variable     ${payload}
     ${user_id}      SET Variable     semid
@@ -121,17 +125,14 @@ PUT Alterar Cadastro Usuario Diamico Email Repetido
     Set Global Variable     ${payload}   
     PUT Endpoint /usuarios
 Resposta Cadastro Usuario Email Repetido
-    Should Be Equal    ${response.json()["message"]}    Este email já está sendo usado
-    
-
-
+    Should Be Equal    ${response.json()["message"]}    Este email já está sendo usado  
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    
 # Delete Usario por ID
 
 DELETE Endpoint /usuarios
     #[Arguments]     ${_id}
-    ${response}     DELETE on Session      serverest         /usuarios/${user_id}  expected_status=anything
+    ${response}     DELETE on Session      serverest         /usuarios/${user_id}   expected_status=anything
     SET Global Variable     ${response}
 
 Resposta Delete Usuario
@@ -147,16 +148,20 @@ Resposta Delete Usuario ID inexistente
     Should Be Equal    ${response.json()["message"]}     Nenhum registro excluído
 
 #-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    
-# DELete Usuario com carrinho cadastrado
+# Delete USUARIO com carrinho cadastrado 
+DELETE Endpoint /usuarios Carrinho Cadastrado
+    ${json}         buscar usuario
+    ${response}     DELETE on Session      serverest         /usuarios/${json}   expected_status=anything
+    SET Global Variable     ${response}
 
-#DELETE Endpoint /usuarios Nao Encontrado
-    #[Arguments]     ${_id}
-    #${response}     DELETE on Session      serverest         /usuarios/     expected_status=anything
-    #SET Global Variable     ${response}
-#Resposta Delete Usuario ID inexistente
-    #Should Be Equal    ${response.json()["message"]}     Nenhum registro excluído
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    
+# Resposta Carrinho Cadastrado 
+Resposta Delete Usuario Carrinho Cadastrado
+    Should Be Equal    ${response.json()["message"]}     Não é permitido excluir usuário com carrinho cadastrado
+    Should not be empty    ${response.json()["idCarrinho"]}    
 
-  
+#-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    
+#imprimor no console o retorno DELETE 
 Imprimir Delete Usuario Response.Content
     Log to console     ${yellow}Resposta para Usuario Deletado:${yellow} ${red}${response.content}${red}   
     
