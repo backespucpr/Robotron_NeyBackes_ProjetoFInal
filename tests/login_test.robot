@@ -42,3 +42,5 @@ Cenario: POST Realizar Login Sem Email 400
     Imprimir Login Response.Content
     Resposta Login Sem Email   
     validar Status Code "400"
+    
+    

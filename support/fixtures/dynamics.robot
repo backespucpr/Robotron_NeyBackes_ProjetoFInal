@@ -6,7 +6,7 @@ Library          FakerLibrary
 
 *** Keywords ***
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-#Dados dinamico para login de usuario
+#Dados dinamicos para login de usuario
 Criar Dados Dinamicos Login Invalido
     ${email}            FakerLIbrary.Email
     ${password}         FakerLibrary.Password
@@ -23,3 +23,32 @@ Criar Dados Dinamicos Login Sem Email
     ${payload}          Create Dictionary        email=    password=${password}
     [return]            ${payload}
 #----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+#Dados dinamicos para cadastro de usuario
+Criar Dados Dinamicos Cadastro Valido
+    ${nome}             FakerLibrary.Name
+    ${email}            FakerLIbrary.Email
+    ${password}         FakerLibrary.Password
+    ${payload}          Create Dictionary        nome=${nome}      email=${email}     password=${password}     administrador=true
+    [return]            ${payload}
+
+
+Criar Dados Dinamicos Cadastro Email Repetido
+    ${nome}             FakerLibrary.Name
+    ${email}            FakerLIbrary.Email
+    ${password}         FakerLibrary.Password
+    ${payload}          Create Dictionary        nome=${nome}      email=fulano@qa.com    password=${password}     administrador=true
+    [return]            ${payload}
+
+
+Criar Dados Dinamicos para Alteracao Valido
+    ${nome}             FakerLibrary.Name
+    ${email}            FakerLIbrary.Email
+    ${password}         FakerLibrary.Password
+    ${payload}          Create Dictionary        nome=${nome}      email=${email}     password=${password}     administrador=true
+    [return]            ${payload}
+
+
+#----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
