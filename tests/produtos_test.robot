@@ -191,6 +191,17 @@ Cenario: DELETE Token Usuario Excluido 401
     Resposta Produto Cadastrado Usuario excluido
     validar Status Code "401"
 
+Cenario: DELETE Produto ADM False 403
+    [Tags]  DELETE_PRODUTO_ADM_FALSE
+    Iniciar cores de resposta
+    POST Cadastro Usuario Estatico ADM False
+    POST Login Estatico Login Administrator False
+    DELETE Endpoint /produtos Nao Encontrado
+    Imprimir Delete Produto Response.Content
+    Resposta delete produto adm false
+    validar Status Code "403"
+    DELETE Endpoint /usuarios
+
 
 
 

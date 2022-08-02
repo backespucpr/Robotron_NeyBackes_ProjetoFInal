@@ -193,6 +193,10 @@ DELETE Endpoint /produtos Token Invalido
     ${response}     DELETE on Session      serverest         /produtos/${json}     headers=${header}    expected_status=anything 
     SET Global Variable     ${response}
     SET Global Variable     ${token_auth}  
+
+Resposta delete produto adm false
+    Should Be Equal    ${response.json()["message"]}    Rota exclusiva para administradores
+
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 #Imprimir a respota para DELETE 
 

@@ -13,7 +13,7 @@
             - Requisicao com email inválido
                 - Status Code "401" # Na documentação era 400 -- REPORTAR --- 
                 - Mensagem de retorno "Email e/ou senha inválidos"
-            # Validações não na cobertura da documentação Serverest
+            # Validações não estão na cobertura da documentação Serverest
             - Requisicao com senha em branco ""
                 - Status Code "400"
                 - Mensagem de retorno "password não pode ficar em branco"
@@ -84,7 +84,7 @@
             - Cadastro com Token de Usuário inexistente
                 - Status Code "401"
                 - Mensagem de retorno "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais"
-            - Cadastro com Token Expirado
+            - Cadastro com Token Expirado #não automatizado 
                 - Status Code "401"
                 - Mensagem de retorno "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais"
             - Cadastro Rota Exclusiva para Admnistradores
@@ -122,19 +122,19 @@
             - Alteração com Token de Usuário inexistente
                 - Status Code "401"
                 - Mensagem de retorno "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais"
-             - Alteração com Token Expirado
+             - Alteração com Token Expirado #não automatizado 
                 - Status Code "401"
                 - Mensagem de retorno "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais"
             - Alteração Rota Exclusiva para Admnistradores
                  - Status Code "403"
                 - Mensagem de retorno "Rota exclusiva para administradores" 
-     DELETE
+     DELETE - /{_id}
          Validações Positivas
             - Deletar um produto cadastrado 
                 - Status Code "200"
                 - Mensagem de retorno "Registro excluído com sucesso"
         Validacoes Negativas
-            - Deletar um produto que não existe 
+            - Deletar um produto que não existe #reportar não seria 400
                 - Status Code "200"
                 - Mensagem de retorno "Nenhum registro excluído"
             - Deletar um produto com Token Ausente/Invalido
@@ -143,12 +143,15 @@
             - Deletar um produto com Token de Usuário inexistente
                 - Status Code "401"
                 - Mensagem de retorno "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais"
-            - Deletar Produto com Token Expirado
+            - Deletar Produto com Token Expirado #não automatizado
                 - Status Code "401"
                 - Mensagem de retorno "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais"
             - Deletar um produto com carrinho cadastrado
                 - Status code "400"
                 - Mensagem de retorno "Não é permitido excluir produto com carrinho cadastrado"
+            - Deletar um produto Rota Exclusiva para Admnistradores
+                 - Status Code "403"    
+                - Mensagem de retorno "Rota exclusiva para administradores" 
 - CARRINHO                
     POST
         Validações Positivas 
@@ -178,7 +181,7 @@
             - Cadastro de Carrinho com Token de Usuário inexistente
                 - Status Code "401"
                 - Mensagem de retorno "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais"
-            - Cadastro de Carrinho com Token Expirado
+            - Cadastro de Carrinho com Token Expirado #Não automatizado
                 - Status Code "401"
                 - Mensagem de retorno "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais"
     GET
@@ -191,7 +194,7 @@
             - Requisicao com ID invalido ou inexistente
                 - Status Code "400"
                 - Mensagem de retorno "Produto não encontrado"
-    DELETE Cancelar Compra
+    DELETE /cancelar Compra
         - Validações Positivas
             - Cancelar Compra       
                  - Status Code "200"
@@ -209,7 +212,7 @@
             - Cancelar Compra com Token de Usuario Excluido
                  - Status Code "401"
                  - Mensagem de Retorno "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais"
-            - Cancelar Compra com Token Expirado
+            - Cancelar Compra com Token Expirado #nao automatizado
                  - Status Code "401"
                  - Mensagem de Retorno "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais"
     DELETE Concluir Compra
