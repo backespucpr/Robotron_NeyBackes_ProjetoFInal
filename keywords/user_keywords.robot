@@ -2,7 +2,7 @@
 * Settings *
 Documentation   Ações e variáveis para o endpoint /usuarios
 Resource        ../support/base.robot
-Library         ../support/library_python.py        
+       
 
 
 #Sessão para criacao de Keywords Personalizadas
