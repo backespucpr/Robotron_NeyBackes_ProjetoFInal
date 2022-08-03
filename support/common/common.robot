@@ -46,6 +46,8 @@ Importar Json Estatico
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Keyword de cores para o log de console
+#Artigo no StackOverflor que me ajudou a montar a keyword
+#https://stackoverflow.com/questions/35652486/how-can-i-put-colors-in-console-output-with-robot-framework
 Iniciar cores de resposta
   ${red}=  Evaluate  ${RED}
   Set Test Variable  ${red}

@@ -193,8 +193,12 @@ Biblioteca | Versão | Utilização |
 
 <strong>Cenarios de teste não automatizados.</strong>
 
- Em casos onde era necessário um token expirado o cenário não foi automatizado, levando em conta o tempo de 10 minutos para expiração do token.
-Neste caso, como proposta, o teste se tornou um candidato a teste manual. 
+
+Pensando na independência de cada cenário de teste, a validação de um cenário utilizando um token expirado dependeria da criação e do aguardo de 10 minutos para sua expiração.
+Existem algumas alternativas no próprio Serverest local para iniciar com um tempo de token reduzido, entretanto esta ação invalidaria os dados relacionados na documentação em relação aos outros casos de teste.
+Deste modo, os casos de teste foram descritos mas não executados na automação, tornando-se candidatos para uma automação manual.
+
+Segue a seguir:
 
 - PRODUTOS<br>
 	<strong> POST</strong>
