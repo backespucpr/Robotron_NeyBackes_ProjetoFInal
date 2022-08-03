@@ -1,7 +1,7 @@
 <div align="center">
   
   # Robotron
-  ## Programa de Bolsas - Sprint 5
+  ## Programa de Bolsas - Sprint 6
    <img src="https://user-images.githubusercontent.com/105370199/175322070-dd22d534-56a9-403a-8a21-9831c7f4901e.png" width="500px" />
 </div>
   
@@ -23,59 +23,31 @@
   
  </div>
 
- 
-<div align="center">
-  
-  ## Querido Compasser, seja bem vindo!
-
-## Este repositório contém as atividades realizadas durante as duas semanas da Sprint 5. Aqui você vai encontrar as atividades das Master Classes além de um exemplo desenvolvido por min com o objetivo de fixar o aprendizado.
 
   
- </div>
- <div style="display: inline_block" align="center">
- 
- <table width="100px">
-<tr><th> Atividades </a></th></tr>
-<tr><td>
+  # - Introdução
 
-Atividade | Data | Obs |
----- | ---- | ----  
-[Master Class Robot](https://github.com/backespucpr/Robotron_NeyBackes_ProjetoFInal/tree/DEVOLOP/masterclasses_sprint_5 "Sprint 5") | 14/07 | Estas são todas atividades realizadas durantes as Masterclasses desta Sprint. |
-
- </table>
-</div>
- 
-
-  
-
-
-
-
-
-### Conteúdo programático - Sprint 5
-
-- Módulo 01 - <strong>01. Introdução ao Robot Framework para testes em API</strong>
-- Módulo 01 - <strong>02. Configuração de ambiente</strong>
-- Módulo 01 - <strong>03. Abordagem Keyword Driven</strong>
-- Módulo 01 - <strong>04. Escrevendo casos e cenários de testes para API</strong>
-- Módulo 01 - <strong>05. Escrita TDD baseada em ações</strong>
-- Módulo 01 - <strong>06. Doc Requests Library</strong>
-- Módulo 01 - <strong>07. Estrutura para testes de API</strong>
-- Módulo 02 - <strong>01. Lidando com Requests e Responses</strong>
-- Módulo 02 - <strong>02. Manipulando Responses e Tageando testes</strong>
-- Módulo 02 - <strong>03. Apresentando Responses e Reports</strong>
-- Módulo 02 - <strong>04. Revisao da estrutura simples para testes de API</strong>
-- Módulo 03 - <strong>01. Organização básica para Pré-Auth de projeto</strong>
-- Módulo 03 - <strong>02. Autenticação simples de API</strong>
-- Módulo 03 - <strong>03. Encadeado requisições com Auth</strong>
-- Módulo 03 - <strong>04. Revisão da estrutura de encadeamento</strong>
-- Módulo 04 - <strong>01. Introdução ao Json e criaçao de arquivo</strong>
-- Módulo 04 - <strong>02. Manipulando Json com Robot</strong>
-
-
+Seja bem vindo! Este repositório foi desenvolvido durante o desafio da Sprint 6 do Programa de Bolsas da Compass. Como desafio final o projeto contempla um mapeamento da API REST Serverest, validando suas requisições e pontos de acesso. Neste projeto é utilizado o Robot Framework que é a principal ferramenta para o processos de automação.<br>
+No material explicativo você vai encontrar todas as informações referentes ao desenvolvimento deste trabalho, ferramentas utilizadas, instalações, observações, mapeamento de testes, além de um código comentado para facilitar o entendimento e a reutilização deste projeto.
 .
 
-## Mas o que é robot?  
+##  Objetivos 
+
+  
+
+- Apresentar um projeto de automação com o Robot Framework; 
+- Apresentar os processos de encadeamento e autenticação;
+- Apresentar uma projeto desenvolvido nos padrões Service Object;
+- Apresentar uma proposta de automação, além de demonstrar sua forma de utilização;
+- Demonstrar a utilização e consumo de uma Library Python;
+- Aplicar dados estático e dinâmicos para a realização dos testes;
+- Identificar os casos de testes e suas automações.
+
+
+
+
+# - Sobre o Robot Framework
+
 
  <div> 
    <img src="https://user-images.githubusercontent.com/105370199/178865528-2159ef69-2c2e-44b1-a475-07badad775d7.gif" width="50px" />
@@ -86,15 +58,14 @@ O Robot Framework é uma estrutura de automação de código aberto genérica pa
 
 Seus recursos de teste podem ser estendidos por bibliotecas de teste implementadas como Python ou Java, e os usuários podem criar novas palavras-chave de nível mais alto a partir de palavras-chave existentes usando a mesma sintaxe usada para criar casos de teste.
 
-O projeto do Robot Framework está hospedado no GitHub, onde você pode encontrar mais documentação, código-fonte e rastreador de problemas.
-
+O projeto do Robot Framework está hospedado no  <a href="https://auditeste.com.br/o-que-e-ferramenta-robot-framework-e-como-ela-funciona/" target="_blank">Github.</a><br>
 <div>   
    <a href="https://auditeste.com.br/o-que-e-ferramenta-robot-framework-e-como-ela-funciona/" target="_blank">Saiba Mais</a><br>
 </div>
-   
 
 
-## Estrutura Robot Exemplo
+
+### Estrutura Robot Exemplo
 
 ```python
 #Sessão para configuração, documentacao, imports de arquivos e librarys
@@ -122,36 +93,12 @@ ${nome_de_sua_variavel}    valor da variavel
 ```
 
 
-## Ferramentas
-
-|Ferramenta | Versão     | Instalação                                                    |
-| -------- | ---------- | ------------------------------------------------------------ |
-| Python | 3.10 | - <a href="https://www.python.org/downloads/" target="_blank">- Download Windows</a><br /> - Para a instalação baixe a versão correspondente e siga as intruções de instalação.<br /> <strong>Instalação Linux via terminal</strong>. <br /> - Verifique se você tem o python instalado: "which python" ou "which python3" <br /> - Instalação: sudo apt-get install python3 <br />  |
-|Git   | 2.34,1 | - Acesse a documentação oficial <br /> <a href="https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git" target="_blank">- Guia de instalaçao</a>  <br /> |
-|Vscode | 1.68.1 | - <br /> <a href="https://code.visualstudio.com/Download" target="_blank">- Download Windows</a><br /> - Para a instalação baixe a versão correspondente e siga as intruções de instalação.<br /><strong>Instalação Linux via terminal</strong> <br />- Instalação: "sudo snap install code --classic"<br /> - Não se esqueca de atualizar: "sudo snap refresh code"|
-|Node | 16.16.0 Lts| -<a href="https://code.visualstudio.com/Download" target="_blank"> Download Site Oficial</a><br />``
-
-
-## Instalando as dependências necessárias via PIP:
-
-
-
-- Digite no seu prompt ou terminal ou comando: "pip install <nome_da_dependência>"
-
-<div> 
-   <img src="https://user-images.githubusercontent.com/105370199/178847667-8d4b59c8-8324-4987-b8f2-0a87b8168bfd.png" width="800px" />
-</div>
-
-
-
-
-
-<br>
-<strong>Dependências utilizadas</strong>
+ <div>
+ <br>
+<strong> Robot Framework e Dependências</strong>
 <br>
 
-
- </div>
+ <br>
  
  <table width="100px">
 <tr><a href="" target="_blank"></th></tr>
@@ -161,134 +108,307 @@ ${nome_de_sua_variavel}    valor da variavel
 
 Biblioteca | Versão | Utilização |
 ---- | ---- | ---- |
- Robot Framework | 5.0.1 | Robot Framework é uma estrutura de automação genérica open source, ou seja, de código aberto que pode ser usado para testar e automatizar processos de software. |
- Robot Framework Browser| 0.1.0 | O Robot Framework Browser utiliza uma tecnologia baseada em JavaScript chamada Playwright. O dramaturgo se conecta diretamente à API do navegador e tem controle total do navegador e de seu conteúdo. |
- Robot Framework Request| 2.25.1 | RequestsLibrary é uma biblioteca Robot Framework destinada a fornecer funcionalidades de teste de API HTTP, envolvendo a conhecida Biblioteca de Solicitações Python.|
-
-
+ <a href="https://medium.com/@mayfernandes/season-tutoriais-ep-01-instalando-o-robot-framework-windows-aebf4477bcae" target="_blank">Robot Framework</a><br> | 5.0.1 | Robot Framework é uma estrutura de automação genérica open source, ou seja, de código aberto que pode ser usado para testar e automatizar processos de software. |
+ <a href="https://robotframework-browser.org/" target="_blank">Robot Framework Browser</a><br> | 0.1.0 | BrowserLibrary utiliza uma tecnologia baseada em JavaScript chamada Playwright. O dramaturgo se conecta diretamente à API do navegador e tem controle total do navegador e de seu conteúdo. |
+ <a href="https://github.com/MarketSquare/robotframework-requests" target="_blank">Robot Framework Request</a><br>| 2.25.1 | RequestsLibrary é uma biblioteca Robot Framework destinada a fornecer funcionalidades de teste de API HTTP, envolvendo a conhecida Biblioteca de Solicitações Python.|
+ <a href="https://pypi.org/project/robotframework-faker/" target="_blank">Robot Framework Faker</a><br>| 1.16.0 | FakerLibrary é uma biblioteca que permite o uso fácil da geração de dados de teste aleatório do Faker no Robot Framework.
+ 
 </td></tr> </table>
 
-## Rodando o Serverest localmente
+</div>
 
-Para evitar problemas ou falhas utilizando o servidor você pode rodar uma versão local do Serverest para utilizar em seus testes.
- - Utilze o comando no seu terminal: npx serverest (mantenha o terminal aberto)
+####  Intalações de pacotes ou dependências via pip (gerenciandor de pacotes)
+  
+  <strong>Exemplo</strong>
  
+  - Digite no seu prompt ou terminal ou comando: "pip install <nome_da_dependência>" e presione "Enter"
+  <div> 
+    <img src="https://user-images.githubusercontent.com/105370199/182438349-e2fe6536-491c-4c19-a775-ac2046b4b7bb.png" width="1000px" />
+  </div>
 
-<div> 
+<div>
+
+### Ferramentas Adicionais Utilizadas
+
+|Ferramenta | Versão     | Instalação                                                    |
+| -------- | ---------- | ------------------------------------------------------------ |
+| Python | 3.10 | - <a href="https://www.python.org/downloads/" target="_blank">- Download Windows</a><br /> - Para a instalação baixe a versão correspondente e siga as intruções de instalação.<br /> <strong>Instalação Linux via terminal</strong>. <br /> - Verifique se você tem o python instalado: "which python" ou "which python3" <br /> - Instalação: sudo apt-get install python3 <br />  |
+|Git   | 2.34,1 | - Acesse a documentação oficial <br /> <a href="https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Instalando-o-Git" target="_blank">- Guia de instalaçao</a>  <br /> |
+|Vscode | 1.68.1 | - <br /> <a href="https://code.visualstudio.com/Download" target="_blank">- Download Windows</a><br /> - Para a instalação baixe a versão correspondente e siga as intruções de instalação.<br /><strong>Instalação Linux via terminal</strong> <br />- Instalação: "sudo snap install code --classic"<br /> - Não se esqueca de atualizar: "sudo snap refresh code"|
+|Node | 16.16.0 Lts| -<a href="https://code.visualstudio.com/Download" target="_blank"> Download Site Oficial</a><br />``
+
+
+ </div>
+
+<br>
+
+# - API REST Serverest
+  O ServeRest é uma API REST gratuita que simula uma loja virtual com intuito de servir de material de estudos de testes de API.
+  Neste projeto a Serverest foi utilizada localmente para evitar problemas ou até mesmo conflitos com dados postados no servidor publico online.
+  
+  <div>   
+   <a href="https://serverest.dev/" target="_blank">Conheça a API REST Serverest</a><br>
+</div>
+<br>
+<br>
+ - <strong>Como utilizar a Serverest localmente</strong>
+ <br>
+
+  Após a instalação do Node.js você pode executar facilmente o servidor Serverest local no seu terminal ou cmd com o seguinte comando:
+    
+ - npx serverest (após a execução do comando o servidor abrira em uma nova porta no seu navegaor e você poderá utilizar este endereço como acesso para os seus testes)
+ - <strong>Exemplo</strong>
+ <div> 
    <img src="https://user-images.githubusercontent.com/105370199/178840558-a437af82-f045-46f6-9bee-7dd647086f86.png" width="800px" />
 </div>
-
-## Comandos úteis para execução dos arquivos Robot
-
-- Executanto todos os testes
-  - Digite robot -d ./<pasta_destino> arquivo.robot
-  
- <div> 
-   <img src="https://user-images.githubusercontent.com/105370199/178848894-3ac66569-d4e7-4ce6-ac5a-b137d6642c4f.png" width="800px" />
-</div>
-  
-- Executando teste com tags
-  - Digite robot -d ./<pasta_destino> -i <tag> arquivo.robot 
-  
- <div> 
-   <img src="https://user-images.githubusercontent.com/105370199/178848826-210d6528-9c47-4b7b-91fa-1c2873cf4e3c.png" width="800px" />
-</div>
-
-## Na prática
+ 
+ <br>
+ 
+  <strong> Mapeamento da API SERVEREST</strong>
+ 
+  O mapa mental foi desenvolvido pensando no aprendizado de sprint passadas do programa, no lado esquerdo o /carrinho está como não prioritário e o         restante dos caminhos como prioritários. Entretanto, neste projeto todos os pontos foram testados para garantir uma maior cobertura e aprendizado na       automação de testes.
 
  <div> 
-   <img src="https://user-images.githubusercontent.com/105370199/178871934-8bab8f20-7173-4134-835f-5715369da3fe.gif" width="800px" />
+   <img src="https://user-images.githubusercontent.com/105370199/182244002-b4bd71ff-1e98-4a2e-aa77-51e654f578b2.png" width="800px" />
 </div>
+ 
+ # - Casos de testes e Relatório de Execução de Testes
   
-  ## Test Case
+ 
+  - <a href="https://github.com/backespucpr/Robotron_NeyBackes_ProjetoFInal/blob/DEVOLOP/support/casos_de_teste.txt" target="_blank">A lista completa com todos os casos de teste.</a><br>
   
-  ### Abaixo estão os casos de teste desenvolvidos para serem utilizadas nos teste com a API Serverest.
+`
+<br>
+
+   <strong>Relatório de Execução de Testes</strong>
   
+   Para verificação do relatório completo da execução dos testes acesse - <a href="https://backespucpr.github.io/reports_test/" target="_blank">Relatório    de Execução</a><br>
+
+  No total foram 53 testes executados nos 4 Endpoints da API REST Serverest
+
+   - /login  - 4 Testes 
+   - /usuários - 11 Testes
+   - /produtos - 20 Testes
+   - /carrinhos - 18 Testes
+
+<strong>Cenarios de teste não automatizados.</strong>
+
+
+Pensando na independência de cada cenário de teste, a validação de um cenário utilizando um token expirado dependeria da criação e do aguardo de 10 minutos para sua expiração.
+Existem algumas alternativas no próprio Serverest local para iniciar com um tempo de token reduzido, entretanto esta ação invalidaria os dados relacionados na documentação em relação aos outros casos de teste.
+Deste modo, os casos de teste foram descritos mas não executados na automação, tornando-se candidatos para uma automação manual.
+
+Segue a seguir:
+
+- PRODUTOS<br>
+	<strong> POST</strong>
+	- Alteração com Token Expirado #não automatizado
+	- Status Code "401"
+	 - Mensagem de retorno "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais"
+  - Status Code "401"<br>
+       <strong>PUT</strong> 
+  	- Alteração com Token Expirado #não automatizado 
+ 	 - Status Code "401"
+	 - Mensagem de retorno "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais"<br>
+	<strong>DELETE - /{_id}</strong> 
+		- Deletar Produto com Token Expirado #não automatizado
+  		- Status Code "401"
+		- Mensagem de retorno "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais"
+- CARRINHOS<br>
+<strong> POST</strong>
+	- Alteração com Token Expirado #não automatizado 
+  - Status Code "401"
+  - Mensagem de retorno "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais"<br>
+	<strong>DELETE /cancelar Compra</strong><br>
+	- Alteração com Token Expirado #não automatizado 
+  	- Status Code "401"
+	- Mensagem de retorno "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais"<br>
+	<strong>DELETE Concluir Compra</strong>
+		- Alteração com Token Expirado #não automatizado 
+  		- Status Code "401"
+		- Mensagem de retorno "Token de acesso ausente, inválido, expirado ou usuário do token não existe mais"<br>
+
+
+### Atenção! Para fins de aprendizado todos os testes são validados, entretando foram encontrados algumas falhas que são reportadas abaixos.
+
+<strong>Problemas ou inconsistências encontradas durante os testes.</strong>
+
+Durante a reprodução dos testes seguindo as documentações da API REST Serverest foram encontrados repostas não mapeadas ou respostas diferentes da documentação.
+
+Segue a seguir:
+
+- LOGIN<br>
+	<strong> POST</strong>
+	- Requisição com email inválido
+		- Status Code "401" - Na documentação o status era 400
+	- Requisição com senha inválida 
+		- Status Code "401" - Na documentação o status era 400
+	- Requisicao com senha em branco ""
+	 	- Status Code "401" 
+		- Validação não está na cobertura da documentação Serverest
+	- Requisicao com email em branco ""
+	 	- Status Code "401" 
+		- Validação não está na cobertura da documentação Serverest
+ 	
+- USUARIOS<br>
+<strong> DELETE</strong>
+	- Deletar um usuario que não existe
+		- Status Code "200" - Não seria 400?
+  
+- CARRINHOS<br>
+<strong> Cancelar compra </strong>
+	- Cancelar compra sem cadastro 
+		- Status Code "200" - Não seria 400?
+	- Cancelar Compra- /{_id}
+		- Mensagem de retorno "Registro excluído com sucesso"
+		- Recebido “Registro excluído com sucesso. Estoque dos produtos reabastecido”
+	
+ 
+
+
+
+
+   
+
+
+
+
+  
+# - Como utilizar este projeto e realizar os testes
+
+  Este projeto está organizado seguindo os padrões Service Object permitindo que sua utilização seja simplificada e que cada Endpoint possa ser testado       individualmente.
+  
+ <div> 
+   <img src="https://user-images.githubusercontent.com/105370199/182450808-da42aedb-368e-4e04-a00d-a2e65c908873.png" width="800px" />
+</div>
+
+  <br>
+  
+ <strong> - Principais comandos para execução dos testes </strong>
+  
+   <br>
+   
+   Para realizar os testes por arquivo utilize o comando a seguir no seu terminal ou cmd
+  - robot -d ./reports ./tests/arquivo_na_pasta_test.robot  
+  <strong>Exemplo</strong>
+  <br> 
+        
+ <div> 
+   <img src="https://user-images.githubusercontent.com/105370199/182451945-08f2373e-0b2f-4274-ba6f-f7b5d01bcd4e.png" width="800px" />
+</div>
+
+  <br>
+        
+   Cada caso de teste possui uma tag ou seja pode ser executado individualmente.
+   
+   Para executar um cenário de teste pela tag utilize o comando a seguir 
+   
+   - robot -d ./reports -i TAG ./tests/arquivo_na_pasta_test.robot   
+   <strong>Exemplo</strong>
+  <br> 
+  
+ <div> 
+   <img src="https://user-images.githubusercontent.com/105370199/182453176-8ca8349b-299a-4225-9eba-165cc00bd7ea.png" width="800px" />
+</div>
+
+
+<br>
+<br>
+
+
+<strong> - Para contribuir ou mesmo utilizar o conteúdo deste repositório você tem duas opções: Clonar este repositório ou baixa-lo via ZIP.</strong>
+
+<div> 
+   <img src="https://user-images.githubusercontent.com/105370199/175949914-ed248ef0-3390-4259-aec0-caea361a3528.gif" width="200px" />
+</div>
+
+<strong>- Clonando o repositório </strong>
+
+- No GitHub.com, navegue até a página principal do repositório.
+- Acima da lista de arquivos, clique em  código.
+- Copie a URL para o repositório.<br>
+- Abra Git Bash. (Terminal ou Prompt)
+- Altere o diretório de trabalho atual para o local em que deseja ter o diretório clonado.
+- Digite git clone (clonar git) e cole a URL que você copiou anteriormente.
+
 ```python
-
-
------------------------------------
-
-
-- LOGIN
-    - POST 
-
-        Validações Positivas        
-            - Validar Login 
-            - Status Code "200"
-            - Mensagem de retorno "realizado com sucesso"            
-        Validações Negativas
-            - Requisição com senha inválida
-            - Requisicao com email inválido 
-            - Status com "400"
-- Usuarios
-    - GET
-        - Listar todos os usuarios
-        - Listar usuario pela id  "200"
-        - Validações Negativas
-            - Validar Usuario não encontrado "400"
-    - POST
-        - Cadastrar usuario "201"
-        
-   - DELETE
-        - Deletar um usuario  "200"
-    
-    - PUT 
-        - Atualizar dados de um usuario "200" 
-- Produtos
-    - GET
-        - LIstar todos os produtos
-        - Listar usuario pela id  "200"
-    - POST
-        - Cadastrar produto "201"
-    - DELETE
-        - Deletar um produto "200"
-    - PUT 
-        - Atualizar dados de um produto "200"
-- Carrinho
-    - GET 
-        - Listar todos os carrinho "200"
-        
-
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+   
 
 
 ```
 
-## Agradecimentos
+- Pressione Enter para criar seu clone local.
+
+```python
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+> Cloning into `Spoon-Knife`...
+> remote: Contando objetos: 10, concluído.
+> remote: Compactando objetos: 100% (8/8), concluído.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.   
+.
+```
 
 
-<strong>Mentoria</strong>
 
-<div>   
-   <a href="https://github.com/DemetrioWebber" target="_blank">Demetrio Webber </a><br>
-   <a href="https://github.com/matheuslocatelli" target="_blank">Matheus Locatelli</a><br>   
-</div>
 
-<br>
+
+# - Agradecimentos
+
+Neste momento gostaria de agradecer a todos que fizeram parte desta jornada. Como iniciante no mercado de programação principalmente na área de testes, me sinto privilegiado por ter tido a oportunidade de fazer parte deste projeto.
+
+O aprendizado foi incrível, mas acima de tudo o companheirismo e apoio dos colegas e evangelistas nesta jornada foi o que me deixou mais feliz e motivado.
+
+Por fim só tenho a agradecer novamente o oportunidade de fazer parte da equipe Compass e com certeza todas essa experiência enriquecedora irá seguir comigo durante toda a minha vida profissional.
+
 
 <strong>Colegas que ajudaram na resolução das atividades e na elaboração deste projeto</strong>
+<div>   
+   <a href="https://github.com/abressam" target="_blank">- Amanda Bressam </a><br>
+   <a href="https://github.com/manuel-valdes" target="_blank">- Manuel Valdes </a><br> 
+   <a href="https://github.com/eslanzarin" target="_blank">- Emily Suzan Lanzarin </a><br> 
+   <a href="https://github.com/BeatrizJardimm" target="_blank">- Paula Beatriz </a><br>
+</div>
+<br>
 
+<strong>Mentores </strong>
+
+<div>   
+   <a href="https://github.com/DemetrioWebber" target="_blank">- Demetrio Webber </a><br>
+   <a href="https://github.com/matheuslocatelli" target="_blank">- Matheus Locatelli</a><br>   
+</div>
+<br>
+
+<strong>Elaboração do README.md</strong>
+<div>   
+   <a href="https://www.youtube.com/watch?v=TsaLQAetPLU&t=1s" target="_blank">- Rafaella Ballarine - Como personalizar o seu perfil no Github (Readme)</a><br>
+   <a href="https://www.youtube.com/watch?v=jIa8R69pKh8" target="_blank">- DevSuperior - Como fazer um README para portfolio no Github</a><br>
+   <a href="https://www.youtube.com/watch?v=oMFiGEZ6UlQ&t=156s" target="_blank"> - kaká cordovil - Como adicionar imagem no readme do GitHub</a>
+</div>
+<br>
+<strong>Repositórios utilizados como exemplo</strong>
+<br>
 <br>
 
 <div>   
-   <a href="https://github.com/manuel-valdes" target="_blank">Manuel Valdes </a><br>   
+   <a href="https://github.com/graph4ai/graph4nlp" target="_blank">- Graph4NLP</a><br>
+   <a href="https://github.com/rafaballerini" target="_blank">- Rafaella Ballerini</a><br>
+   <a href="https://github.com/ohmyzsh/ohmyzsh" target="_blank"> - OhMyZsh </a><br>
+   <a href="https://github.com/luong-komorebi/Markdown-Tutorial" target="_blank"> - Markdown-Tutorial </a>
+</div>
+<br>
+<br>
+
+<strong>Aprendizado sobre Git e Github</strong>
+<div>   
+   <a href="https://www.youtube.com/watch?v=kB5e-gTAl_s&t=1121s" target="_blank">- Dev Aprender - Curso de Git e Github COMPLETO 2021 [Iniciantes] + Desafios + Muita Prática</a><br>
+   <a href="https://www.youtube.com/watch?v=myQuetgSEsY" target="_blank">- Código Fonte TV - GITHUB // Dicionário do Programador</a><br>
+   <a href="https://www.youtube.com/watch?v=SWYqp7iY_Tc&list=RDQMD9DH5noB57Y&start_radio=1" target="_blank"> - Git & GitHub Crash Course For Beginners</a>
 </div>
 
 <br>
 
-
-<br>
-<strong>Referências Bibliográfica Complementares</strong>
-<br>
-<br>
-
-<div>   
-   <a href="https://marketsquare.github.io/robotframework-requests/doc/RequestsLibrary.html" target="_blank">- Reques Library</a><br>
-   <a href="https://robotframework.org/robotframework/latest/libraries/BuiltIn.html" target="_blank">- Bult in</a><br>
-   <a href="https://robotframework.org/robotframework/latest/RobotFrameworkUserGuide.html" target="_blank">- Robot User Guide</a><br>
- <br>
-   
-</div>
 
 ## Em caso de dúvidas ou sugestões entre em contato
    
