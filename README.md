@@ -1,9 +1,4 @@
-<div align="center">
-  
-  # Robotron
-  ## Programa de Bolsas - Sprint 6
-   <img src="https://user-images.githubusercontent.com/105370199/175322070-dd22d534-56a9-403a-8a21-9831c7f4901e.png" width="500px" />
-</div>
+
   
  #
   
